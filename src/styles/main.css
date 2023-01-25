@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  /* colors */
+  --clr-hue: 142;
+  /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --clr-ntrl-min: #FFF;
+  --clr-ntrl-max: #000;
+  --clr-primary: hsl(var(--clr-hue), 69%, 61%);
+  --clr-title: hsl(var(--clr-hue), 8%, 15%);
+  --clr-text: hsl(var(--clr-hue), 8%, 45%);
+  --clr-title-lt: hsl(var(--clr-hue), 8%, 65%);
+  --clr-input: hsl(var(--clr-hue), 70%, 96%);
+  --clr-body: hsl(var(--clr-hue), 60%, 99%);
+  --clr-container: var(--clr-ntrl-min);
+
+  /* fonts */
+  --ff-body: 'Poppins', sans-serif;
+  --fs-big: 2rem;
+  --fs-h1: 1.5rem;
+  --fs-h2: 1.25rem;
+  --fs-h3: 1.125rem;
+  --fs-base: .938rem;
+  --fs-milli: .813rem;
+  --fs-micro: .75rem;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+
+  /* margin */
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /* z index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 100;
+
+  --header-height: 3rem;
+
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --fs-big: 3rem;
+    --fs-h1: 2.25rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.25rem;
+    --fs-base: 1rem;
+    --fs-milli: .875rem;
+    --fs-micro: .813rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  background-color: var(--clr-body);
+  color: var(--clr-text);
+}
+
+h1, h2, h3, h4 {
+  color: var(--clr-title);
+  font-weight: var(--fw-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* reusable classes */
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--fs-h1);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--fs-micro);
+  margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/* layout */
+.container {
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
