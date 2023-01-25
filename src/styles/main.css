@@ -323,4 +323,45 @@ img {
 .button--flex {
   display: inline-flex;
   align-items: center;
-} 
+}
+
+/* about */
+
+.about__img {
+  width: 200px;
+  border-radius: .5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.about__description {
+  text-align: center;
+  margin-bottom: var(--m-2-5);
+}
+
+.about__info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--m-2-5);
+}
+
+.about__info-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-title);
+}
+
+.about__info-name {
+  font-size: var(--fs-milli);
+}
+
+.about__info-title,
+.about__info-name {
+  display: block;
+  text-align: center;
+}
+
+.about__buttons {
+  display: flex;
+  justify-content: center;
+}
