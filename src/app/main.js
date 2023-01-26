@@ -8,6 +8,10 @@ const navLinks = document.querySelectorAll('.nav__link')
 const skillsContents = document.querySelectorAll('.skills__content')
 const skillsHeaders = document.querySelectorAll('.skills__header')
 
+// qualification
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
 // navbar logic
 if (navToggle) {
   navToggle.addEventListener('click', () => {
@@ -54,3 +58,21 @@ function toggleSkills(e) {
 }
 
 skillsHeaders.forEach(header => header.addEventListener('click', toggleSkills))
+
+// Qualification tabs logic
+
+function changeTab(e) {
+  tabs.forEach(tab => tab.classList.remove('qualification__active'))
+  const tabSelected = e.currentTarget
+  tabSelected.classList.add('qualification__active')
+
+  tabContents.forEach(tabContent => {
+    tabContent.classList.remove('qualification__active')
+    if (tabContent.id === tabSelected.dataset['tabTarget'])
+      tabContent.classList.add('qualification__active')
+  })
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', changeTab)
+})
