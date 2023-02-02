@@ -156,3 +156,13 @@ function scrollHeader(e) {
 }
 
 window.addEventListener('scroll', scrollHeader)
+
+// scroll up
+function scrollUp(e) {
+  const scrollUp = document.getElementById('scroll-up')
+  const { currentTarget } = e
+  if (currentTarget.scrollY >= 560) scrollUp.classList.add('show-scroll')
+  else scrollUp.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollUp)

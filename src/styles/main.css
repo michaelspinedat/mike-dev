@@ -873,3 +873,29 @@ img {
 .footer__social {
   color: var(--clr-ntrl-min);
 }
+
+/* scroll up */
+.scroll-up {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--clr-primary);
+  opacity: .8;
+  padding: 0 .3rem;
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+}
+
+.scroll-up:hover {
+  background-color: var(--clr-primary-dk);
+}
+
+.scroll-up__icon {
+  font-size: 1.5rem;
+  color: var(--clr-ntrl-min);
+}
+
+.show-scroll {
+  bottom: 5rem;
+}
