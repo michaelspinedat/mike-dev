@@ -320,6 +320,15 @@ img {
   transition: .3s;
 }
 
+.button--white {
+  background-color: #FFF;
+  color: var(--clr-primary);
+}
+
+.button--white:hover {
+  background-color: #FFF;
+}
+
 .button--flex {
   display: inline-flex;
   align-items: center;
@@ -682,4 +691,33 @@ img {
 .swiper-button-next,
 .swiper-pagination-bullets {
   outline: none;
+}
+
+/* project in mind */
+.project {
+  text-align: center;
+}
+
+.project__bg {
+  background-color: var(--clr-primary);
+  padding-top: 3rem;
+}
+
+.project__title {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--m-0-75);
+}
+
+.project__description {
+  margin-bottom: var(--m-1-5);
+}
+
+.project__title,
+.project__description {
+  color: var(--clr-ntrl-min);
+}
+
+.project__img {
+  width: 232px;
+  justify-self: center;
 }
