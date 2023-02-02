@@ -16,6 +16,8 @@
   --clr-input: hsl(var(--clr-hue), 70%, 96%);
   --clr-body: hsl(var(--clr-hue), 60%, 99%);
   --clr-container: var(--clr-ntrl-min);
+  --clr-scroll-bar: hsl(var(--clr-hue), 12%, 90%);
+  --clr-scroll-thumb: hsl(var(--clr-hue), 12%, 80%);
 
   /* fonts */
   --ff-body: 'Poppins', sans-serif;
@@ -57,6 +59,8 @@ body.dark-theme {
   --clr-input: hsl(var(--clr-hue), 29%, 16%);
   --clr-body: hsl(var(--clr-hue), 28%, 12%);
   --clr-container: hsl(var(--clr-hue), 29%, 16%);
+  --clr-scroll-bar: hsl(var(--clr-hue), 12%, 48%);
+  --clr-scroll-thumb: hsl(var(--clr-hue), 12%, 36%);
 }
 
 /* button dark / light */
@@ -928,4 +932,20 @@ img {
 
 .show-scroll {
   bottom: 5rem;
+}
+
+/* scroll-bar */
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: var(--clr-scroll-bar);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-scroll-thumb);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--clr-text-lt);
 }
