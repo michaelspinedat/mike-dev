@@ -81,7 +81,6 @@ function changeTab(e) {
 tabs.forEach(tab => tab.addEventListener('click', changeTab))
 
 // Services logic
-
 function showModal(modal) {
   modals[modal].classList.add('active-modal')
 }
@@ -92,3 +91,19 @@ function hideModal(modal) {
 
 servicesBtns.forEach((serviceBtn, i) => serviceBtn.addEventListener('click', () => { showModal(i) }))
 modalBtnsClose.forEach((btnClose, i) => btnClose.addEventListener('click', () => { hideModal(i) }))
+
+// Portfolio swiper logic
+const swiper = new Swiper(".swiper-container", {
+  cssMode: true,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  mousewheel: true,
+  keyboard: true,
+});
