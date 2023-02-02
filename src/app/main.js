@@ -17,6 +17,9 @@ const servicesBtns = document.querySelectorAll('.services__button')
 const modals = document.querySelectorAll('.services__modal')
 const modalBtnsClose = document.querySelectorAll('.services__modal-close')
 
+// Sections
+const sections = document.querySelectorAll('section[id]')
+
 // navbar logic
 if (navToggle) {
   navToggle.addEventListener('click', () => {
@@ -125,3 +128,20 @@ const testimonialSwiper = new Swiper(".swiper-container-testimonial", {
     }
   }
 });
+
+// Scroll sections active link
+function scrollActive() {
+  const scrollY = window.scrollY
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight
+    const sectionTop = section.offsetTop - 50
+    const sectionId = section.getAttribute('id')
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
+      document.querySelector(`.nav__menu a[href*=${sectionId}]`).classList.add('active-link')
+    else
+      document.querySelector(`.nav__menu a[href*=${sectionId}]`).classList.remove('active-link')
+  })
+}
+
+window.addEventListener('scroll', scrollActive)
