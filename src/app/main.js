@@ -93,7 +93,7 @@ servicesBtns.forEach((serviceBtn, i) => serviceBtn.addEventListener('click', () 
 modalBtnsClose.forEach((btnClose, i) => btnClose.addEventListener('click', () => { hideModal(i) }))
 
 // Portfolio swiper logic
-const swiper = new Swiper(".swiper-container", {
+const portfolioSwiper = new Swiper(".swiper-container-portfolio", {
   cssMode: true,
   loop: true,
   navigation: {
@@ -106,4 +106,22 @@ const swiper = new Swiper(".swiper-container", {
   },
   mousewheel: true,
   keyboard: true,
+});
+
+
+// Testimonial swiper logic
+const testimonialSwiper = new Swiper(".swiper-container-testimonial", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 48,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  breakPoints: {
+    568: {
+      slidesPerView: 2,
+    }
+  }
 });
