@@ -7,6 +7,7 @@
   --clr-ntrl-min: #FFF;
   --clr-ntrl-max: #000;
   --clr-primary: hsl(var(--clr-hue), 69%, 61%);
+  --clr-primary-variant: hsl(var(--clr-hue), 69%, 61%);
   --clr-primary-dk: hsl(var(--clr-hue), 57%, 53%);
   --clr-primary-ltr: hsl(var(--clr-hue), 92%, 85%);
   --clr-title: hsl(var(--clr-hue), 8%, 15%);
@@ -45,6 +46,34 @@
 
   --header-height: 3rem;
 
+}
+
+/* dark theme */
+
+body.dark-theme {
+  --clr-primary-variant: hsl(var(--clr-hue), 30%, 8%);
+  --clr-title: hsl(var(--clr-hue), 8%, 95%);
+  --clr-text: hsl(var(--clr-hue), 8%, 75%);
+  --clr-input: hsl(var(--clr-hue), 29%, 16%);
+  --clr-body: hsl(var(--clr-hue), 28%, 12%);
+  --clr-container: hsl(var(--clr-hue), 29%, 16%);
+}
+
+/* button dark / light */
+.nav__btns {
+  display: flex;
+  align-items: center;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--clr-title);
+  margin-right: var(--m-1);
+  cursor: pointer;
+}
+
+.change-theme:hover {
+  color: var(--clr-primary);
 }
 
 /* base */
@@ -707,7 +736,7 @@ img {
 }
 
 .project__bg {
-  background-color: var(--clr-primary);
+  background-color: var(--clr-primary-variant);
   padding-top: 3rem;
 }
 
@@ -819,6 +848,7 @@ img {
   padding: .25rem .5rem .5rem 0;
 }
 
+/* footer */
 .footer {
   padding-top: 2rem;
 }
@@ -828,7 +858,7 @@ img {
 }
 
 .footer__bg {
-  background-color: var(--clr-primary);
+  background-color: var(--clr-primary-variant);
   padding: 2rem 0 3rem;
 }
 

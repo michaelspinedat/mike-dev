@@ -17,8 +17,15 @@ const servicesBtns = document.querySelectorAll('.services__button')
 const modals = document.querySelectorAll('.services__modal')
 const modalBtnsClose = document.querySelectorAll('.services__modal-close')
 
-// Sections
+// sections
 const sections = document.querySelectorAll('section[id]')
+
+// theme
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
 
 // navbar logic
 if (navToggle) {
@@ -129,7 +136,7 @@ const testimonialSwiper = new Swiper(".swiper-container-testimonial", {
   }
 });
 
-// Scroll sections active link
+// Scroll sections active link logic
 function scrollActive() {
   const scrollY = window.scrollY
 
@@ -146,7 +153,7 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive)
 
-// Change background header
+// Change background header logic
 function scrollHeader(e) {
   const header = document.getElementById('header')
   const { currentTarget } = e
@@ -157,7 +164,7 @@ function scrollHeader(e) {
 
 window.addEventListener('scroll', scrollHeader)
 
-// scroll up
+// scroll up logic
 function scrollUp(e) {
   const scrollUp = document.getElementById('scroll-up')
   const { currentTarget } = e
@@ -166,3 +173,21 @@ function scrollUp(e) {
 }
 
 window.addEventListener('scroll', scrollUp)
+
+// dark / light theme logic
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+function toggleTheme() {
+  document.body.classList.toggle(darkTheme)
+  themeButton.classList.toggle(iconTheme)
+  localStorage.setItem('selected-theme', getCurrentTheme())
+  localStorage.setItem('selected-icon', getCurrentIcon())
+}
+
+themeButton.addEventListener('click', toggleTheme)
