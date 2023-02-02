@@ -12,6 +12,11 @@ const skillsHeaders = document.querySelectorAll('.skills__header')
 const tabs = document.querySelectorAll('[data-tab-target]')
 const tabContents = document.querySelectorAll('[data-tab-content]')
 
+// services
+const servicesBtns = document.querySelectorAll('.services__button')
+const modals = document.querySelectorAll('.services__modal')
+const modalBtnsClose = document.querySelectorAll('.services__modal-close')
+
 // navbar logic
 if (navToggle) {
   navToggle.addEventListener('click', () => {
@@ -73,6 +78,17 @@ function changeTab(e) {
   })
 }
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', changeTab)
-})
+tabs.forEach(tab => tab.addEventListener('click', changeTab))
+
+// Services logic
+
+function showModal(modal) {
+  modals[modal].classList.add('active-modal')
+}
+
+function hideModal(modal) {
+  modals[modal].classList.remove('active-modal')
+}
+
+servicesBtns.forEach((serviceBtn, i) => serviceBtn.addEventListener('click', () => { showModal(i) }))
+modalBtnsClose.forEach((btnClose, i) => btnClose.addEventListener('click', () => { hideModal(i) }))
