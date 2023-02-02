@@ -129,7 +129,7 @@ const testimonialSwiper = new Swiper(".swiper-container-testimonial", {
     clickable: true,
     dynamicBullets: true,
   },
-  breakPoints: {
+  breakpoints: {
     568: {
       slidesPerView: 2,
     }
